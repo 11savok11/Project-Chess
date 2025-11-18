@@ -1,0 +1,60 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WindowsFormsApp1
+{
+    public partial class History : Form
+    {
+        public History()
+        {
+            InitializeComponent();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Admin af = new Admin();
+            af.Owner = this;
+            af.Show();
+        }
+
+        private void History_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "chessDataSet2.История_Проведений". При необходимости она может быть перемещена или удалена.
+            this.история_ПроведенийTableAdapter.Fill(this.chessDataSet2.История_Проведений);
+
+        }
+        private void dataGridView1_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Удалить запись?", "Удаление", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+            if (dr == DialogResult.Cancel)
+            {
+                e.Cancel = true;
+            }
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            история_ПроведенийTableAdapter.Update(chessDataSet2);
+    }
+
+        private void ButReg_Click(object sender, EventArgs e)
+        {
+            AddHis af = new AddHis();
+            af.Owner = this;
+            af.Show();
+        }
+
+        private void ButLog_Click(object sender, EventArgs e)
+        {
+            SeachHis af = new SeachHis();
+            af.Owner = this;
+            af.Show();
+        }
+    }
+}
