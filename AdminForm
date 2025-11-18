@@ -1,0 +1,59 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Security.Principal;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WindowsFormsApp1
+{
+    public partial class Admin : Form
+    {
+        public Admin()
+        {
+            InitializeComponent();
+        }
+
+        private void ButReg_Click(object sender, EventArgs e)
+        {
+            Shashmat af = new Shashmat();
+            af.Owner = this;
+            af.Show();
+        }
+
+        private void ButClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void ButLog_Click(object sender, EventArgs e)
+        {
+            Mathes af = new Mathes();
+            af.Owner = this;
+            af.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            History af = new History();
+            af.Owner = this;
+            af.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Accaunt af = new Accaunt();
+            af.Owner = this;
+            af.Show();
+        }
+
+        private void Admin_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
