@@ -44,7 +44,7 @@ namespace WindowsFormsApp1
             аккаунтыBindingSource.EndEdit();
             аккаунтыTableAdapter.Update(savAccountDataSet.Аккаунты);
 
-            MessageBox.Show("Заказ Принят!");
+            MessageBox.Show("Регистрация Успешна!");
         }
         private bool IsValidPassword(string password)
         {
